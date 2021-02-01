@@ -6,7 +6,7 @@ services:
     - 80:80
   backend:
     container_name: back
-    build: .
+    build: ./warehouse-back
     ports: 
       - 8060:8060 
     restart: on-failure

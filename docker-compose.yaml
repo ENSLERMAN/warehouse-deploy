@@ -8,7 +8,7 @@ services:
     container_name: back
     build: ./warehouse-back
     ports: 
-      - 8060:8060 
+      - '8060:8060' 
     restart: on-failure
     depends_on:
       - fullstack-postgres

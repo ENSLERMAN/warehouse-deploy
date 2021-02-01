@@ -22,8 +22,6 @@ services:
     environment:
       - POSTGRES_USER=ensler
       - POSTGRES_PASSWORD=b4uld103
-      - POSTGRES_DB=ensler
-      - DATABASE_HOST=fullstack-postgres
     ports:
       - '5432:5432'
     volumes:

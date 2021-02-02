@@ -16,7 +16,7 @@ services:
       - fullstack
   fullstack-postgres:
     image: postgres:latest
-    container_name: full_db_postgres
+    container_name: warehouse-pg
     environment:
       - POSTGRES_USER=ensler
       - POSTGRES_PASSWORD=b4uld103
@@ -26,8 +26,19 @@ services:
       - database_postgres:/var/lib/postgresql/data
     networks:
       - fullstack
+  click-db:
+    image: yandex/clickhouse-server
+    container_name: warehouse-click
+    networks:
+      - fullstack
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    volumes:
+      - database_click:/var/lib/postgresql/data
 volumes:
   database_postgres:
+  database_click:
 
 networks:
   fullstack:
